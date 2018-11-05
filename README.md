@@ -133,7 +133,7 @@ After letting BEAST run for about 30 minutes open Tracer [Figure 9](#fig9:f9), a
 
 Select the *Trace* tab. This shows how the MCMC has sampled in parameter space.
 
-**Question:** Inspect the trace for TreeHeight, and the clock model parameters (rate.mean and rate.variance). Does it appear that we have sufficient sampling from the stationary distribution? What do these parameters mean?
+> **Question:** Inspect the trace for TreeHeight, and the clock model parameters (rate.mean and rate.variance). Does it appear that we have sufficient sampling from the stationary distribution? What do these parameters mean?
 
 An other diagnostic of MCMC sampling is the effective sample size, shown in Tracer as ESS. This is the estimated number of independent samples obtained. A rule of thumb is to ensure that ESS is at least 200 for all parameters.
 
@@ -147,7 +147,7 @@ Select the TreeHeight and rate.mean parameters (you might need to use the comman
 
 Check rate.coefficientOfVariation parameter [Figure 11](#fig11:f11). This is the standard deviation of branch rates divided by the mean rate. Typically, if this parameter is abutting zero, the data have low rate variation, such that they can follow a strict clock.
 
-**Question:** Does this data set appear to follow a strict clock, or does it display substantial rate variation among lineages?
+> **Question:** Does this data set appear to follow a strict clock, or does it display substantial rate variation among lineages?
 
 <figure>
 	<a id="fig:f11"></a>
@@ -155,7 +155,7 @@ Check rate.coefficientOfVariation parameter [Figure 11](#fig11:f11). This is the
 	<figcaption>Figure 11: Posterior density of coefficient of rate variation. </figcaption>
 </figure>
 
-**Question:** When did these h1n1 samples last share a common ancestor? Is it consistent with our knowledge of the 2009 pandemic?
+> **Question:** When did these h1n1 samples last share a common ancestor? Is it consistent with our knowledge of the 2009 pandemic?
 
 Select the BMT_ModelIndicator trace. These are the models that were sampled using an index as shown in [Figure 12](#f12:f12).
 
@@ -189,7 +189,7 @@ Click OK. A browser with a figure similar to [Figure 15](#f15:f15) should appear
 	<figcaption>Figure 15: Models visited in BeastModelTest. Those in blue circles correspond to the 95% credible set of models, with their size proportional to their posterior probability. Those in red are outside the credible set, and those with no circles have less than 0.43 posterior support. </figcaption>
 </figure>
 
-Question: Which model has the highest posterior probability? Does this model include among site rate heterogeneity? (hint: check the hasGammaRates and hasInvariableSites traces)
+> **Question**: Which model has the highest posterior probability? Does this model include among site rate heterogeneity? (hint: check the hasGammaRates and hasInvariableSites traces)
 
 The .trees file contains trees sampled from the posterior. We can summarise them by using TreeAnnotator, which is distributed with the BEAST package. Double-click the TreeAnnotator icon. The window in [Figure 16](#f16:f16) will appear.
 
@@ -211,7 +211,7 @@ After the program has run, find the h1n1_ucld.tre and open it in [icytree](icytr
 
 
 Optional exercise 1: Use the BEAUTI window, which we left open, to sample from the prior distribution. This is useful to assess whether the data are informative about parameters of interest. To do this, go to the MCMC tab and tick the SampleFromPrior box. Change the names of the output log and trees files to h1n1_ucld_prior.log and h1n1_ucld_prior.trees and go to File, Save as, and save it as h1n1_UCLD_prior.xml. This analysis will run much faster because it does not need to calculate the phylogenetic likelihood. After it has run, load the log file with that from the posterior.
-Question: Does it seem like our data are driving our estimates of evolutionary rates and timescales (hint: compare the prior and the posterior for the tree height, as in [Figure 18](#f18:f18), and for the rate.mean parameters).
+> **Question**: Does it seem like our data are driving our estimates of evolutionary rates and timescales (hint: compare the prior and the posterior for the tree height, as in [Figure 18](#f18:f18), and for the rate.mean parameters).
 
 <figure>
 	<a id="fig:f18"></a>
