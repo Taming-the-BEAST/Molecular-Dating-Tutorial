@@ -47,12 +47,12 @@ IcyTree ([https://icytree.org](https://icytree.org)) is a browser-based phylogen
 
 # Setting up the BEAST2 xml
 
-BEAST2 requires the data and model specified in an xml format, which can be done using the program BEAUTI. Open BEAUTI and drag the alignment (NorthAm.Nov.fasta) to this window [Figure 1](#fig:f1). Note that there are several tabs (Partitions, Tip Dates, Site Model, Clock Model, Priors, and MCMC).
+BEAST2 requires the data and model specified in an xml format, which can be done using the program BEAUti. Open BEAUti and drag the alignment (NorthAm.Nov.fasta) to this window [Figure 1](#fig:f1). Note that there are several tabs (Partitions, Tip Dates, Site Model, Clock Model, Priors, and MCMC).
 
 <figure>
 	<a id="fig:f1"></a>
 	<img style="width:75%;" src="figures/f1.png" alt="">
-	<figcaption>Figure 1: BEAUTI with h1n1 sequence alignment loaded.</figcaption>
+	<figcaption>Figure 1: BEAUti with h1n1 sequence alignment loaded.</figcaption>
 </figure>
 
 
@@ -61,19 +61,19 @@ Click on the Tip Dates tab and check the box Use tip dates [Figure 2](#fig2:f2).
 <figure>
 	<a id="fig:f2"></a>
 	<img style="width:75%;" src="figures/f2.png" alt="">
-	<figcaption>Figure 2: Tip dates enabled in BEAUTI.</figcaption>
+	<figcaption>Figure 2: Tip dates enabled in BEAUti.</figcaption>
 </figure>
 
 To use the tip dates as calibrations, click on the Auto-configure button. Check the first box (use everything) and in the dropdown menu, select after last, and type in a vertical line (|) as shown in Fig 2.
 
-The BEAUTI window should now display the dates for each of the sequences under the column date.
+The BEAUti window should now display the dates for each of the sequences under the column date.
 
 Click on the *Site Model* tab. Instead of using a single substitution model, we will average over those that account for differences in the number of transitions to transversions. In the first drop-down menu select *BEAST Model Test*. There is a second drop-down menu to select the range of models that we will sample during the MCMC. Select transitionToTransversionSpit to limit our search to those that allow for differences in transitions to transversions. Click on the box Empirical to use the empirical base frequencies. These options should look like those in [Figure 3](#fig:f3).
 
 <figure>
 	<a id="fig:f3"></a>
 	<img style="width:75%;" src="figures/f3.png" alt="">
-	<figcaption>Figure 3: Substitution model set up in BEAUTI.</figcaption>
+	<figcaption>Figure 3: Substitution model set up in BEAUti.</figcaption>
 </figure>
 
 Click on the Clock Model tab. In the dropdown menu, select Relaxed Clock Lognormal [Figure 4](#fig:f4). The other default options are fine.
@@ -81,7 +81,7 @@ Click on the Clock Model tab. In the dropdown menu, select Relaxed Clock Lognorm
 <figure>
 	<a id="fig:f4"></a>
 	<img style="width:75%;" src="figures/f4.png" alt="">
-	<figcaption>Figure 4: Molecular clock model set up in BEAUTI.</figcaption>
+	<figcaption>Figure 4: Molecular clock model set up in BEAUti.</figcaption>
 </figure>
 
 Click on the *Priors* tab. Select the Coalescent Exponential Population model [Figure 5](#fig5:f5). Most of the remaining priors are fine for our analyses, but it is a good exercise to inspect these distributions. In particular, set a Uniform distribution for the mean of the lognormal distribution for the rate with lower and upper bounds of 0 and 1, respectively. This is based on our knowledge that flu probably does not evolve at a rate that is faster than 1 subs/site/year.
@@ -89,7 +89,7 @@ Click on the *Priors* tab. Select the Coalescent Exponential Population model [F
 <figure>
 	<a id="fig:f5"></a>
 	<img style="width:75%;" src="figures/f5.png" alt="">
-	<figcaption>Figure 5: Priors tab in BEAUTI with the Coalescent Exponential Population prior. </figcaption>
+	<figcaption>Figure 5: Priors tab in BEAUti with the Coalescent Exponential Population prior. </figcaption>
 </figure>
 
 
@@ -102,7 +102,9 @@ Click on the MCMC tab. Here, we can select different options for the MCMC. The c
 	<figcaption>Figure 6: MCMC set up in BEAST. </figcaption>
 </figure>
 
-Our BEAST input file is ready. To save it, click on File, Save, and name it h1n1_ucld.xml. Do not close BEAUTI.
+Our BEAST input file is ready. To save it, click on File, Save, and name it h1n1_ucld.xml. Do not close BEAUti.
+
+## Running the analysis
 
 To run BEAST, double-click on the BEAST2 icon. A window with some options will appear [Figure 7](#fig7:f7).
 
@@ -112,7 +114,7 @@ To run BEAST, double-click on the BEAST2 icon. A window with some options will a
 	<figcaption>Figure 7: BEAST starting window. </figcaption>
 </figure>
 
-Click on Choose File... and select the xml file that we created in BEAUTI. Click Run. The MCMC will start running [Figure 8](#fig8:f8).
+Click on Choose File... and select the xml file that we created in BEAUti. Click Run. The MCMC will start running [Figure 8](#fig8:f8).
 
 <figure>
 	<a id="fig:f8"></a>
@@ -121,6 +123,8 @@ Click on Choose File... and select the xml file that we created in BEAUTI. Click
 </figure>
 
 Note that two files have been created in the folder where we saved the xml file, these are the .trees and .log files. This analysis can take up to two hours to complete, but we can inspect the log file much earlier.
+
+## Analyzing the results
 
 After letting BEAST run for about 30 minutes open Tracer [Figure 9](#fig9:f9), and drag the h1n1_UCLD.log file to the right pane of the Tracer window.
 
@@ -211,7 +215,7 @@ After the program has run, find the h1n1_ucld.tre and open it in [icytree](icytr
 
 
 ## Optional exercise 1
-Use the BEAUTI window, which we left open, to sample from the prior distribution. This is useful to assess whether the data are informative about parameters of interest. To do this, go to the MCMC tab and tick the SampleFromPrior box. Change the names of the output log and trees files to h1n1_ucld_prior.log and h1n1_ucld_prior.trees and go to File, Save as, and save it as h1n1_UCLD_prior.xml. This analysis will run much faster because it does not need to calculate the phylogenetic likelihood. After it has run, load the log file with that from the posterior.
+Use the BEAUti window, which we left open, to sample from the prior distribution. This is useful to assess whether the data are informative about parameters of interest. To do this, go to the MCMC tab and tick the SampleFromPrior box. Change the names of the output log and trees files to h1n1_ucld_prior.log and h1n1_ucld_prior.trees and go to File, Save as, and save it as h1n1_UCLD_prior.xml. This analysis will run much faster because it does not need to calculate the phylogenetic likelihood. After it has run, load the log file with that from the posterior.
 
 > **Question**: Does it seem like our data are driving our estimates of evolutionary rates and timescales (hint: compare the prior and the posterior for the tree height, as in [Figure 18](#f18:f18), and for the rate.mean parameters).
 
@@ -223,7 +227,7 @@ Use the BEAUTI window, which we left open, to sample from the prior distribution
 
 
 ## Optional exercise 2
-Use the BEAUTI window, which we left open, to set up a strict clock. To do this go to the Clock Model tab and select Strict Clock. In the MCMC tab change the output file names to h1n1_sc.log, h1n1_sc.trees. Save it as h1n1_sc.xml and run it in BEAST. Compare the rate and node age estimates to those from the relaxed clock used here.
+Use the BEAUti window, which we left open, to set up a strict clock. To do this go to the Clock Model tab and select Strict Clock. In the MCMC tab change the output file names to h1n1_sc.log, h1n1_sc.trees. Save it as h1n1_sc.xml and run it in BEAST. Compare the rate and node age estimates to those from the relaxed clock used here.
 
 
 # Relevant References
