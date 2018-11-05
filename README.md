@@ -165,7 +165,7 @@ Select the BMT_ModelIndicator trace. These are the models that were sampled usin
 
 <figure>
 	<a id="fig:f12"></a>
-	<img style="width:75%;" src="figures/t1.png" alt="">
+	<img style="width:75%;" src="figures/f12.png" alt="">
 	<figcaption>Figure 12: Index of models in BeastModelTest (from the bModelTest tutorial by Ramussen et al.). </figcaption>
 </figure>
 
