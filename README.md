@@ -11,17 +11,17 @@ tracerversion: 1.7
 
 # Background
 
-In this tutorial we will analyse 100 full genome sequences from the 2009 H1N1 flu pandemic in North America. The sequences were collected from about February to November, such that their sampling times can be used for calibration. They were analysed by Hedge and Rambaut {% cite hedge2013real --file master-refs.bib %}. An important aspect of using sampling times for calibration is that the sampling time should capture a sufficient number of substitutions, i.e. the population should be measurably evolving {% cite drummond2003measurably --file master-refs.bib %}. One way to verify whether a population is measurably evolving is to compare the prior and posterior distribution of the tree height, which we will do here. We will also use a relaxed molecular clock and the bModel test add-on to average over substitution models {% cite bouckaert2017bmodeltest --file master-refs.bib %}. In the optional exercises we can compare the estimates from a relaxed molecular clock to those from a strict molecular clock model. In a subsequent tutorial we will use the exponential coalescent and constant birth-death model to infer epidemiological parameters.
+In this tutorial we will analyse 100 full genome sequences from the 2009 H1N1 flu pandemic in North America. The sequences were collected from about February to November, such that their sampling times can be used for calibration. They were analysed by Hedge and Rambaut {% cite hedge2013real --file Molecular-Dating-Tutorial/master-refs.bib %}. An important aspect of using sampling times for calibration is that the sampling time should capture a sufficient number of substitutions, i.e. the population should be measurably evolving {% cite drummond2003measurably --file Molecular-Dating-Tutorial/master-refs.bib %}. One way to verify whether a population is measurably evolving is to compare the prior and posterior distribution of the tree height, which we will do here. We will also use a relaxed molecular clock and the bModel test add-on to average over substitution models {% cite bouckaert2017bmodeltest --file Molecular-Dating-Tutorial/master-refs.bib %}. In the optional exercises we can compare the estimates from a relaxed molecular clock to those from a strict molecular clock model. In a subsequent tutorial we will use the exponential coalescent and constant birth-death model to infer epidemiological parameters.
 
 # Programs used in this Exercise
 
 ### BEAST2 - Bayesian Evolutionary Analysis Sampling Trees 2
 
-BEAST2 is a free software package for Bayesian evolutionary analysis of molecular sequences using MCMC and strictly oriented toward inference using rooted, time-measured phylogenetic trees {% cite Bouckaert2014 --file master-refs.bib %}. This tutorial uses the BEAST2 version 2.5.
+BEAST2 is a free software package for Bayesian evolutionary analysis of molecular sequences using MCMC and strictly oriented toward inference using rooted, time-measured phylogenetic trees {% cite Bouckaert2014 --file Molecular-Dating-Tutorial/master-refs.bib %}. This tutorial uses the BEAST2 version 2.5.
 
 ### bModelTest
 
-bModelTest {% cite bouckaert2017bmodeltest --file master-refs.bib %} is used to average over substitution models during the MCMC. For installation instructions click [here](http://www.beast2.org/managing-packages/).
+bModelTest {% cite bouckaert2017bmodeltest --file Molecular-Dating-Tutorial/master-refs.bib %} is used to average over substitution models during the MCMC. For installation instructions click [here](http://www.beast2.org/managing-packages/).
 
 ### BEAUti2 - Bayesian Evolutionary Analysis Utility
 
@@ -41,7 +41,7 @@ Tracer ([http://tree.bio.ed.ac.uk/software/tracer](http://tree.bio.ed.ac.uk/soft
 
 ### IcyTree
 
-IcyTree ([https://icytree.org](https://icytree.org)) is a browser-based phylogenetic tree viewer {% cite vaughan2017icytree --file master-refs.bib %}. It is intended for rapid visualisation of phylogenetic tree files. It can also render phylogenetic networks provided in extended Newick format. IcyTree is compatible with current versions of Mozilla Firefox and Google Chrome.
+IcyTree ([https://icytree.org](https://icytree.org)) is a browser-based phylogenetic tree viewer {% cite vaughan2017icytree --file Molecular-Dating-Tutorial/master-refs.bib %}. It is intended for rapid visualisation of phylogenetic tree files. It can also render phylogenetic networks provided in extended Newick format. IcyTree is compatible with current versions of Mozilla Firefox and Google Chrome.
 
 ----
 
@@ -225,4 +225,4 @@ Optional exercise 2: Use the BEAUTI window, which we left open, to set up a stri
 
 # Relevant References
 
-{% bibliography --cited --file master-refs.bib %}
+{% bibliography --cited --file Molecular-Dating-Tutorial/master-refs.bib %}
