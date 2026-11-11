@@ -1,10 +1,21 @@
 ---
 author: Sebastian Duchene, Tim Vaughan, Veronika Boskova
-level: Intermediate
 title: Molecular dating using heterochronous data and substitution model averaging
 subtitle: Estimating the time of origin of the 2009 H1N1 pandemic in North America
-beastversion: 2.5
 tracerversion: 1.7
+beastversion_tutorial: '2.5'
+workflow: Basic workflow
+status: current
+keywords:
+- relaxed clock
+- molecular clock
+- tip dating
+- substitution models
+- model averaging
+packages:
+- bModelTest
+domains:
+- epidemiology
 ---
 
 
